@@ -3,25 +3,32 @@
     <html>
         <head>
             <title>Calculadora de Hidratación</title>
+            <link rel = "stylesheet" href = "./style.css"/>
+            <script src="script.js" defer></script>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     </head>
         <body>
-            <div>
-                <div>
-                    <h1>Hidratación Basal</h1>
-                    <input type = "number" placeholder="Peso en Kg" />
-                    <p>* Debe completar todos los datos!</p>
-                    <button>Calcular</button>
-                    <p>71cc/h</p>
-                    <p>m+m/2 : 105cc/h</p>
+            <div id = "contenedor">
+                <div id = "calculadora">
+                    <div class = "contenido">
+                        <h1>Hidratación Basal</h1>
+                        <p>Completa todos los datos</p>
+                        <input class="item" id="peso" type = "number" placeholder="Peso en Kg" />
+                        <p>* Debe completar todos los datos!</p>
+                        <button class = "item" id = "calcular">Calcular</button>
+                        <p class = "item resultado" id = "flu">71cc/h</p>
+                        <p class = "item resultado" id = "man">m+m/2 : 105cc/h</p>
+                    </div>
                 </div>
-                <div>
-                    <h1>¿Cómo se calcula?</h1>
-                    <u1>
-                        <li>De 0kg a 10kg, se calcula 100cc por cada kilo</li>
-                        <li>Se suman 50cc por cada kilo de peso por arriba de 10kg, hasta 20kg</li>
-                        <li>De 20kg para arriba, se suman 20cc por cada kilo adicional</li>
-                    </u1>
+                <div id = "detalle">
+                    <div class = "contenido">                        
+                        <h1>¿Cómo se calcula?</h1>
+                        <u1>
+                            <li>De 0kg a 10kg, se calcula 100cc por cada kilo</li>
+                            <li>Se suman 50cc por cada kilo de peso por arriba de 10kg, hasta 20kg</li>
+                            <li>De 20kg para arriba, se suman 20cc por cada kilo adicional</li>
+                        </u1>
+                    </div>
                 </div>
             </div>
         </body>
