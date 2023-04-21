@@ -8,6 +8,9 @@ body{
     font-family: "Montserrat", sans-serif;
     background-color: #f6f5f7;
     color: #3E363F;
+    background-image: url("fondo.jpg");  
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #contenedor{
