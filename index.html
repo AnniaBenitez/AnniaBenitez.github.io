@@ -3,6 +3,8 @@
     <html>
         <head>
             <title>Calculadora de Hidratación</title>
+            <!--Cambiar logo a formato .ico-->
+            <link rel="icon" href="michi.png">
             <link rel = "stylesheet" href = "./style.css"/>
             <script src="script.js" defer></script>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -12,9 +14,9 @@
                 <div id = "calculadora">
                     <div class = "contenido">
                         <h1>Hidratación Basal</h1>
-                        <p>Completa todos los datos</p>
+                        <p class="item">Completa todos los datos</p>
                         <input class="item" id="peso" type = "number" placeholder="Peso en Kg" />
-                        <p>* Debe completar todos los datos!</p>
+                        <p class="item" id="error">* Debe completar todos los datos!</p>
                         <button class = "item" id = "calcular">Calcular</button>
                         <p class = "item resultado" id = "flu">71cc/h</p>
                         <p class = "item resultado" id = "man">m+m/2 : 105cc/h</p>
