@@ -42,8 +42,8 @@ function calcularFlujo(peso){
         METODO.innerHTML = '<b>Metodo utilizado:</b> Cálculo de Superficie Corporal'; 
         let flujo = calcularSuperficieCorporal(peso);
         FLU.innerHTML = '<b>Flujo: </b>' + flujo + ' cc/hr';
-        MAN1500.innerHTML = '<b>MantenimientoX1500: </b>' + calcularMantenimiento(flujo)*1.5*1500 + ' cc/hr';
-        MAN2000.innerHTML = '<b>MantenimientoX2000: </b>' + calcularMantenimiento(flujo)*1.5*2000 + ' cc/hr';
+        MAN1500.innerHTML = '<b>MantenimientoX1500: </b>' + calcularMantenimiento(flujo)*1500 + ' cc/día - ' + (calcularMantenimiento(flujo)*1500)/24 + ' cc/hr';
+        MAN2000.innerHTML = '<b>MantenimientoX2000: </b>' + calcularMantenimiento(flujo)*2000 + ' cc/día - ' + (calcularMantenimiento(flujo)*1500)/24 + ' cc/hr';
         FLU.style.display = 'block';
         MAN1500.style.display = 'block';
         MAN2000.style.display = 'block';
