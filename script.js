@@ -7,7 +7,6 @@ const MAN1500 = document.getElementById('mant1500');        //Constane direccion
 const MAN2000 = document.getElementById('mant2000');        //Constane direccion del texto de mantenimiento
 const METODO = document.getElementById('metodo');           //Contiene la direccion de impresion del metodo utilizado
 
-
 /*El listener reacciona ante el boton, al ser presionado
 El evento se encarga de calcular un flujo y mantenimiento según
 el peso ingresado en la caja input*/
@@ -29,6 +28,7 @@ function calcularFlujo(peso){
         MAN2000.style.display = 'none';
         METODO.innerHTML = '<b>Metodo utilizado:</b> Holliday-Segar'; 
         let flujo = calcularHollidaySegar(peso);
+        //se muestran resultados en pantalla
         FLU.innerHTML = '<b>Flujo: </b>' + flujo + ' cc/hr';
         MAN.innerHTML = '<b>Mantenimiento:</b> ' + calcularMantenimiento(flujo) + ' cc/hr';
         MANSUP.innerHTML = '<b>Mantenimiento Superior (m+m/2): </b>' + (calcularMantenimiento(flujo)*1.5) + ' cc/hr';
@@ -41,6 +41,7 @@ function calcularFlujo(peso){
         MANSUP.style.display = 'none';
         METODO.innerHTML = '<b>Metodo utilizado:</b> Cálculo de Superficie Corporal'; 
         let flujo = calcularSuperficieCorporal(peso);
+        //se muestran resultados en pantalla
         FLU.innerHTML = '<b>Flujo: </b>' + flujo + ' cc/hr';
         MAN1500.innerHTML = '<b>MantenimientoX1500: </b>' + calcularMantenimiento(flujo)*1500 + ' cc/día - ' + (calcularMantenimiento(flujo)*1500)/24 + ' cc/hr';
         MAN2000.innerHTML = '<b>MantenimientoX2000: </b>' + calcularMantenimiento(flujo)*2000 + ' cc/día - ' + (calcularMantenimiento(flujo)*1500)/24 + ' cc/hr';
