@@ -32,7 +32,7 @@ body{
     width: 80%;
     height: auto;
     max-width: 1000px;;
-    height: 700px;
+    /*height: 700px;*/
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(2, 1fr);
@@ -59,8 +59,6 @@ body{
     0 10px 10px rgba(0,0,0,0.22);
     grid-area: resultados;
 }
-
-
 
 .contenido{
     position: relative;
