@@ -1,47 +1,66 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
+*{
+    margin: 0; 
+    padding: 0;
+}
+
 h1{
     color: blue;
+    margin : 10%;
 }
 
 body{
     font-family: "Montserrat", sans-serif;
     background-color: #f6f5f7;
     color: #3E363F;
-    background-image: url("fondo.jpg");  
-    background-repeat: no-repeat;
+    background-image: url("fondo.jpg"); 
     background-size: cover;
-}
-
-#contenedor{
-    width: 900px;
-    height: 500px;
-    text-align: center;
-    /* Estas 3 lineas se encargan de centrar el div vertical y horizontalmente */
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    border-radius: 10px;
-    overflow: hidden; 
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-    0 10px 10px rgba(0,0,0,0.22);
 }
 
 #calculadora{
     background: white;
-    /* Con estas 3 lineas los divs quedarán lado a lado*/
-    width: 50%;
-    height: 100%;
-    float: left;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+    0 10px 10px rgba(0,0,0,0.22);
+    grid-area : calculadora;
+}
+
+#contenedor{
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+    height: auto;
+    max-width: 1000px;;
+    height: 700px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);    
+    grid-template-areas: "calculadora resultados"
+                        "calculadora resultados"
+                        "detalle detalle";
 }
 
 #detalle{
-    background: #FF416C;
-    width: 50%;
-    height: 100%;
-    float: left;
-    color: #f6f5f7
+    padding: 10px;
+    background: rgb(112, 112, 235);
+    color: #f6f5f7;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+    0 10px 10px rgba(0,0,0,0.22);
+    grid-area: detalle;
 }
+
+#resultados{
+    background-color: #FF416C;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+    0 10px 10px rgba(0,0,0,0.22);
+    grid-area: resultados;
+}
+
+
 
 .contenido{
     position: relative;
@@ -52,11 +71,11 @@ body{
 }
 
 input{
+    margin-top: 5%;
     width: 70%;
     padding: 12px 15px;
     border: none;
     background-color: #eee;
-    margin: auto;
 }
 
 button{
@@ -87,10 +106,41 @@ button:active {
     display: none;
 }
 
-.resultado{
-    color: #0A81D1;
-    font-weight: bold;
-    font-size: 25px;
-    margin-bottom: 5px;
+#mant1500{
     display: none;
+}
+
+#mant2000{
+    display: none;
+}
+
+.resultado{
+    text-align: left;
+    color: white;
+    margin-bottom: 5px;
+}
+
+#ResulObtenidos{
+    color: white;
+}
+
+#item{
+    font-size: 20px;
+}
+
+@media screen and (max-width: 768px){
+    #contenedor{
+        grid-template-areas: "calculadora calculadora"
+                            "resultados resultados"
+                            "detalle detalle";
+    }
+}
+
+#detalle .contenido h1{
+    margin: 0 0 5% 5%;
+}
+
+li{
+    text-align: left;
+        font-size: 15px;
 }

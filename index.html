@@ -3,7 +3,6 @@
     <html>
         <head>
             <title>Calculadora de Hidratación</title>
-            <!--Cambiar logo a formato .ico-->
             <link rel="icon" href="icono.ico">
             <link rel = "stylesheet" href = "./style.css"/>
             <script src="script.js" defer></script>
@@ -11,6 +10,7 @@
     </head>
         <body>           
             <div id = "contenedor">
+
                 <div id = "calculadora">
                     <div class = "contenido">
                         <h1>Hidratación Basal</h1>
@@ -18,21 +18,35 @@
                         <input class="item" id="peso" type = "number" placeholder="Peso en Kg" />
                         <p class="item" id="error">* Debe completar todos los datos!</p>
                         <button class = "item" id = "calcular">Calcular</button>
-                        <p class = "item resultado" id = "flu">71cc/h</p>
-                        <p class = "item resultado" id = "man">m+m/2 : 105cc/h</p>
                     </div>
                 </div>
+
+                <div id = 'resultados'>
+                    <div class = 'contenido'>
+                        <h1 id = 'ResulObtenidos'>Resultados Obtenidos: </h1>
+                        <p class = "item resultado" id = "metodo"> <b>Metodo utilizado:</b> ____</p>
+                        <p class = "item resultado" id = "flujo"> <b>Flujo:</b> 0cc/h</p>
+                        <p class = "item resultado" id = "mantenimiento"><b>Mantenimiento:</b> 0cc/h</p>
+                        <p class = "item resultado" id = "mantenimientoSup"><b>Mantenimiento Superior (m+m/2):</b> 0cc/h</p>
+                        <p class = "item resultado" id = "mant1500"><b>MantenimientoX1500:</b> 0cc/h</p>
+                        <p class = "item resultado" id = "mant2000"><b>MantenimientoX2000:</b> 0cc/h</p>
+                    </div>
+                </div>    
+                
                 <div id = "detalle">
                     <div class = "contenido">                        
                         <h1>¿Cómo se calcula?</h1>
                         <u1>
                             <li>De 0kg a 10kg, se calcula 100cc por cada kilo</li>
                             <li>Se suman 50cc por cada kilo de peso por arriba de 10kg, hasta 20kg</li>
-                            <li>De 20kg para arriba, se suman 20cc por cada kilo adicional</li>
+                            <li>De 20kg para arriba, se suman 20cc por cada kilo adicional hasta los 30kg</li>
+                            <li>En caso de superar los 30kg, se usa el método de superficie corporal, el cual usa una fórmula: Superficie corporal = <b>( (peso * 4) + 7) / (peso + 90)</b></li>
                         </u1>
                     </div>
                 </div>
-            </div>            
+
+            </div> 
+
         </body>
         <footer></footer>
     </html>
