@@ -29,7 +29,7 @@ function calcularFlujo(peso){
         METODO.innerHTML = '<b>Metodo utilizado:</b> Holliday-Segar'; 
         let flujo = calcularHollidaySegar(peso);
         //se muestran resultados en pantalla
-        FLU.innerHTML = '<b>Flujo: </b>' + flujo + ' cc/hr';
+        FLU.innerHTML = `<b>Flujo: </b>${flujo} cc/día`;
         MAN.innerHTML = '<b>Mantenimiento:</b> ' + calcularMantenimiento(flujo) + ' cc/hr';
         MANSUP.innerHTML = '<b>Mantenimiento Superior (m+m/2): </b>' + (calcularMantenimiento(flujo)*1.5) + ' cc/hr';
         FLU.style.display = 'block';
@@ -42,9 +42,9 @@ function calcularFlujo(peso){
         METODO.innerHTML = '<b>Metodo utilizado:</b> Cálculo de Superficie Corporal'; 
         let flujo = calcularSuperficieCorporal(peso);
         //se muestran resultados en pantalla
-        FLU.innerHTML = '<b>Flujo: </b>' + flujo + ' cc/hr';
-        MAN1500.innerHTML = '<b>MantenimientoX1500: </b>' + calcularMantenimiento(flujo)*1500 + ' cc/día - ' + (calcularMantenimiento(flujo)*1500)/24 + ' cc/hr';
-        MAN2000.innerHTML = '<b>MantenimientoX2000: </b>' + calcularMantenimiento(flujo)*2000 + ' cc/día - ' + (calcularMantenimiento(flujo)*1500)/24 + ' cc/hr';
+        FLU.innerHTML = '<b>Superficie Corporal: </b>' + flujo + 'm2';
+        MAN1500.innerHTML = `<b>MantenimientoX1500: </b>${(flujo) * 1500}ml`;
+        MAN2000.innerHTML = `<b>MantenimientoX2000: </b>${(flujo) * 2000}ml`;
         FLU.style.display = 'block';
         MAN1500.style.display = 'block';
         MAN2000.style.display = 'block';
@@ -65,8 +65,8 @@ function calcularHollidaySegar(peso){
 }
 
 /*Realiza el calculo de flujo según el método de la superficie corporal */
-function calcularSuperficieCorporal(peso){
-    return (( (peso * 4) + 7) / (peso + 90)).toFixed(3);
+function calcularSuperficieCorporal(p){  
+    return ((p*4 + 7)/(parseInt(p)+90)).toFixed(3);
 }
 
 /* Calcula el mantenimiento diario según el flujo */
